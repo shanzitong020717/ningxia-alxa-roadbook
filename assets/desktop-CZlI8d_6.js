@@ -1,1 +1,0 @@
-import{A as o}from"./styles-DgVJ0V3v.js";import{c as r,j as t,R as e}from"./react-vendor-BVAQ-h3e.js";import"./map-vendor-Dk73KsM1.js";import"./icons-B1lzsNUh.js";r.createRoot(document.getElementById("root")).render(t.jsx(e.StrictMode,{children:t.jsx(o,{})}));
