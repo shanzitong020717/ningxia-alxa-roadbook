@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="2026年国庆宁夏、阿拉善、中卫与乌海六日自驾路书" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <title>宁夏 · 阿拉善六日自驾路书</title>
+    <script>
+      // Entry router: one link has to work on both a phone and a laptop, and it
+      // must keep working when the site is hosted under a sub-path. Resolve the
+      // target relatively so it survives any deployment root.
+      (function () {
+        var ua = navigator.userAgent || "";
+        var isPhone = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+        var iPadDesktopMode = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+        var narrow = window.innerWidth > 0 && window.innerWidth < 480;
+        var forced = /[?&]native=1/.test(location.search);
+
+        var target = isPhone || iPadDesktopMode || narrow || forced ? "mobile.html" : "desktop.html";
+
+        // Preserve the query string (e.g. ?native=1) so behaviour stays explicit.
+        var search = location.search ? location.search : "";
+        if (location.hash) search += location.hash;
+
+        location.replace(new URL(target + search, location.href).href);
+      })();
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=./desktop.html" />
+    </noscript>
+  </head>
+  <body>
+    <p style="font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; padding: 24px">
+      正在打开路书……如果长时间没有反应，请<a href="./mobile.html">打开手机版</a>或<a href="./desktop.html">打开桌面版</a>。
+    </p>
+  </body>
+</html>
